@@ -12,7 +12,7 @@
       "workers_dev": false,
       "preview_urls": false,
       "vars": { "ENVIRONMENT": "staging", "MEDIA_MODE": "git", "SITE_URL": "https://configure-staging-domain.invalid" },
-      "d1_databases": [{ "binding": "DB", "database_name": "portfolio-staging", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }]
+      "d1_databases": [{ "binding": "DB", "database_name": "portfolio-staging", "database_id": "af8a60a5-6e22-4d81-827d-5cd7e73b6785", "migrations_dir": "migrations" }]
     }
   }
 }
