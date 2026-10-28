@@ -1,0 +1,14 @@
+# Local-only admin access. Generate: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+# Never configure this in staging/production. The Worker also requires loopback + ENVIRONMENT=local.
+LOCAL_ADMIN_TOKEN=
+ACCESS_TEAM_DOMAIN=
+ACCESS_AUD=
+ADMIN_EMAIL=codexstechnology@gmail.com
+TURNSTILE_SITE_KEY=
+TURNSTILE_SECRET_KEY=
+# Optional public-repository token, never returned to browser.
+GITHUB_TOKEN=
+# Optional email notification; currently supports Resend, an optional external provider.
+EMAIL_API_KEY=
+EMAIL_FROM=
+EMAIL_TO=codexstechnology@gmail.com

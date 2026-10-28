@@ -1,0 +1,26 @@
+name: Local-quality-equivalent checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run db:local
+      - run: npx playwright install --with-deps chromium
+      - name: Configure ephemeral local-only test token
+        run: |
+          TOKEN=$(openssl rand -hex 32)
+          echo "LOCAL_ADMIN_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+          echo "LOCAL_ADMIN_TOKEN=$TOKEN" > .dev.vars
+      - run: npm run test:e2e
